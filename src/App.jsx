@@ -3,12 +3,15 @@ import { useState } from "react";
 import EscolherPrototipo from "./components/escolherPrototipo/EscolherPrototipo";
 import CameraPrototipo from "./components/camera/CameraPrototipo";
 import EntradaModoAula from "./components/camera/1entradaModoAula/EntradaModoAula";
+import ConfigurarCurso from "./components/camera/2configurarcurso/ConfigurarCurso";
 
 function App() {
   const [telaAtual, setTelaAtual] = useState("escolha");
 
   const [entradaModoAulaAberta, setEntradaModoAulaAberta] = useState(false);
 
+  const [configurarCursoAberta, setConfigurarCursoAberta] = useState(false);
+  
   function abrirCamera() {
     setTelaAtual("camera");
   }
@@ -27,7 +30,7 @@ function App() {
   }
 
   function configurarModoAula () {
-    setEntradaModoAulaAberta(false);
+    setEntradaModoAulaAberta(true);
   }
 
   if (telaAtual === "camera") {
