@@ -1,0 +1,145 @@
+.entrada-modo-aula {
+  position: absolute;
+  z-index: 20;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+}
+
+.entrada-modo-aula_fundo {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(1px);
+}
+
+.entrada-modo-aula_modal {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 320px);
+  overflow: hidden;
+  border: 1px solid #202828;
+  border-radius: 18px;
+  background-color: #080c0c;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  animation: abrir-modal 220ms ease-out;
+}
+
+.entrada-modo-aula_cabecalho {
+  padding: 25px 22px 22px;
+  color: #ffffff;
+  text-align: center;
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(0, 162, 190, 0.32),
+      transparent 65%
+    ),
+    #00647b;
+}
+
+.entrada-modo-aula_icone {
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 13px;
+  display: grid;
+  place-items: center;
+  color: #00191f;
+  border: 2px solid #00191f;
+  border-radius: 50%;
+}
+
+.entrada-modo-aula_cabecalho h2 {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.entrada-modo-aula_cabecalho p {
+  color: #a9d8e1;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.entrada-modo-aula_conteudo {
+  padding: 18px 17px 17px;
+}
+
+.entrada-modo-aula_privacidade {
+  padding: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: #c0c6c6;
+  border: 1px solid #2b3030;
+  border-radius: 9px;
+  background-color: #171b1b;
+}
+
+.entrada-modo-aula_privacidade svg {
+  flex: 0 0 auto;
+  color: #d1ae00;
+}
+
+.entrada-modo-aula_privacidade p {
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.entrada-modo-aula_conteudo h3 {
+  margin: 19px 0 15px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.entrada-modo-aula_acoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11px;
+}
+
+.entrada-modo-aula_acoes button {
+  min-height: 39px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  transition:
+    transform 150ms ease,
+    background-color 150ms ease;
+}
+
+.entrada-modo-aula_acoes button:active {
+  transform: scale(0.97);
+}
+
+.entrada-modo-aula_agora-nao {
+  color: #ffffff;
+  border: 1px solid #6b7373;
+  background-color: #2a2c2c3a;
+}
+
+.entrada-modo-aula_agora-nao:hover {
+  background-color: #1c2222;
+}
+
+.entrada-modo-aula_configurar {
+  color: #ffffff;
+  background-color: #00647b;
+}
+
+.entrada-modo-aula_configurar:hover {
+  background-color: #007e98;
+}
+
+@keyframes abrir-modal {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
