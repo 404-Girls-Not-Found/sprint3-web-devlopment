@@ -96,18 +96,18 @@
   font-size: 14px;
 }
 
-.configurar_curso_etapa {
+.etapa {
   color: var(--texto_etapa);
   font-size: 10px;
   text-align: right;
 }
 
-.configurar_curso_progresso {
+.progresso {
   height: 3px;
   background-color: var(--fundo_progresso);
 }
 
-.configurar_curso_progresso span {
+.progresso span {
   width: 25%;
   height: 100%;
   display: block;

@@ -95,12 +95,12 @@ function ConfigurarAulas({
           <strong>Modo Aula</strong>
         </div>
 
-        <span className="configurar_aulas_etapa">
+        <span className="etapa">
           2 de 4
         </span>
       </header>
 
-      <div className="configurar_aulas_progresso">
+      <div className="progresso">
         <span />
       </div>
 

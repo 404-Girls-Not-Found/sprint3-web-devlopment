@@ -41,10 +41,10 @@ function ConfigurarCurso ({
                     <strong>Modo Aula</strong>
                 </div>
 
-                <span className="configurar_curso_etapa">1 de 4</span>
+                <span className="etapa">1 de 4</span>
             </header>
 
-            <div className="configurar_curso_progresso">    <span/>
+            <div className="progresso">    <span/>
             </div>
 
             <main className="configurar_curso_conteudo">

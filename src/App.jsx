@@ -5,6 +5,7 @@ import CameraPrototipo from "./components/camera/CameraPrototipo";
 import EntradaModoAula from "./components/camera/1entradaModoAula/EntradaModoAula";
 import ConfigurarCurso from "./components/camera/2configurarcurso/ConfigurarCurso";
 import ConfigurarAulas from "./components/camera/3configurarcurso/ConfigurarAulas";
+import Revisar from "./components/camera/4revisarcronograma/Revisar";
 
 function App() {
   const [telaAtual, setTelaAtual] = useState("escolha");
@@ -16,6 +17,9 @@ function App() {
     useState(false);
 
   const [configuracaoAulasAberta, setConfiguracaoAulasAberta] =
+    useState(false);
+
+  const [revisaoAberta, setRevisaoAberta] =
     useState(false);
 
   const [curso, setCurso] = useState("");
@@ -30,22 +34,25 @@ function App() {
     },
   ]);
 
+  function fecharTodasAsTelas() {
+    setEntradaModoAulaAberta(false);
+    setConfigurarCursoAberta(false);
+    setConfiguracaoAulasAberta(false);
+    setRevisaoAberta(false);
+  }
+
   function abrirCamera() {
     setTelaAtual("camera");
   }
 
   function voltarParaEscolhaPrototipo() {
-    setEntradaModoAulaAberta(false);
-    setConfigurarCursoAberta(false);
-    setConfiguracaoAulasAberta(false);
-
+    fecharTodasAsTelas();
     setTelaAtual("escolha");
   }
 
   function abrirEntradaModoAula() {
+    fecharTodasAsTelas();
     setEntradaModoAulaAberta(true);
-    setConfigurarCursoAberta(false);
-    setConfiguracaoAulasAberta(false);
   }
 
   function fecharEntradaModoAula() {
@@ -53,36 +60,52 @@ function App() {
   }
 
   function configurarModoAula() {
-    setEntradaModoAulaAberta(false);
+    fecharTodasAsTelas();
     setConfigurarCursoAberta(true);
-    setConfiguracaoAulasAberta(false);
   }
 
   function voltarParaEntradaModoAula() {
-    setConfigurarCursoAberta(false);
-    setConfiguracaoAulasAberta(false);
+    fecharTodasAsTelas();
     setEntradaModoAulaAberta(true);
   }
 
   function continuarConfiguracaoCurso() {
-    setEntradaModoAulaAberta(false);
-    setConfigurarCursoAberta(false);
+    fecharTodasAsTelas();
     setConfiguracaoAulasAberta(true);
   }
 
   function voltarParaConfigurarCurso() {
-    setEntradaModoAulaAberta(false);
-    setConfiguracaoAulasAberta(false);
+    fecharTodasAsTelas();
     setConfigurarCursoAberta(true);
   }
 
   function continuarConfiguracaoAulas() {
-    setConfiguracaoAulasAberta(false);
+    fecharTodasAsTelas();
+    setRevisaoAberta(true);
+  }
+
+  function voltarParaConfigurarAulas() {
+    fecharTodasAsTelas();
+    setConfiguracaoAulasAberta(true);
+  }
+
+  function editarCurso() {
+    fecharTodasAsTelas();
+    setConfigurarCursoAberta(true);
+  }
+
+  function editarAulas() {
+    fecharTodasAsTelas();
+    setConfiguracaoAulasAberta(true);
+  }
+
+  function finalizarConfiguracao() {
+    fecharTodasAsTelas();
 
     console.log("Curso:", curso);
     console.log("Aulas:", aulas);
 
-    alert("Curso e aulas configurados com sucesso!");
+    alert("Modo Aula ativado com sucesso!");
   }
 
   if (telaAtual === "camera") {
@@ -112,6 +135,16 @@ function App() {
           onVoltar={voltarParaConfigurarCurso}
           onContinuar={continuarConfiguracaoAulas}
         />
+
+        <Revisar
+          aberto={revisaoAberta}
+          curso={curso}
+          aulas={aulas}
+          onVoltar={voltarParaConfigurarAulas}
+          onEditarCurso={editarCurso}
+          onEditarAulas={editarAulas}
+          onFinalizar={finalizarConfiguracao}
+        />
       </CameraPrototipo>
     );
   }
@@ -123,4 +156,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; 
