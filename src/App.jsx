@@ -24,6 +24,48 @@ import {
 
 import "./index.css";
 
+const CHAVE_STORAGE_CURSO = "jovi_modoaula_curso";
+const CHAVE_STORAGE_AULAS = "jovi_modoaula_aulas";
+
+const AULA_PADRAO = {
+  id: 1,
+  materia: "",
+  dia: "",
+  horarioInicio: "",
+  horarioFim: "",
+};
+
+function carregarCursoSalvo() {
+  try {
+    const cursoSalvo = localStorage.getItem(CHAVE_STORAGE_CURSO);
+    return cursoSalvo ?? "";
+  } catch (erro) {
+    console.error("Erro ao carregar curso do localStorage:", erro);
+    return "";
+  }
+}
+
+function carregarAulasSalvas() {
+  try {
+    const aulasSalvas = localStorage.getItem(CHAVE_STORAGE_AULAS);
+
+    if (!aulasSalvas) {
+      return [AULA_PADRAO];
+    }
+
+    const aulasConvertidas = JSON.parse(aulasSalvas);
+
+    if (!Array.isArray(aulasConvertidas) || aulasConvertidas.length === 0) {
+      return [AULA_PADRAO];
+    }
+
+    return aulasConvertidas;
+  } catch (erro) {
+    console.error("Erro ao carregar aulas do localStorage:", erro);
+    return [AULA_PADRAO];
+  }
+}
+
 function App() {
   const [telaAtual, setTelaAtual] = useState("escolha");
 
@@ -58,17 +100,9 @@ function App() {
   const [formaOrganizacao, setFormaOrganizacao] =
     useState("");
 
-  const [curso, setCurso] = useState("");
 
-  const [aulas, setAulas] = useState([
-    {
-      id: 1,
-      materia: "",
-      dia: "",
-      horarioInicio: "",
-      horarioFim: "",
-    },
-  ]);
+  const [curso, setCurso] = useState(carregarCursoSalvo);
+  const [aulas, setAulas] = useState(carregarAulasSalvas);
 
   const videoRef = useRef(null);
   const streamRef = useRef(null);
@@ -234,6 +268,22 @@ function App() {
       pararCamera();
     };
   }, [telaAtual]);
+
+  useEffect(() => {
+   try {
+     localStorage.setItem(CHAVE_STORAGE_CURSO, curso);
+   } catch (erro) {
+     console.error("Erro ao salvar curso no localStorage:", erro);
+   }
+ }, [curso]);
+
+ useEffect(() => {
+   try {
+     localStorage.setItem(CHAVE_STORAGE_AULAS, JSON.stringify(aulas));
+   } catch (erro) {
+     console.error("Erro ao salvar aulas no localStorage:", erro);
+   }
+ }, [aulas])
 
   if (telaAtual === "escolha") {
     return (
