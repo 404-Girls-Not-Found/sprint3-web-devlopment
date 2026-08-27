@@ -1,0 +1,153 @@
+:root {
+  --amarelo_camera: #d6b900;
+  --vermelho-gravacao: #ff3b30;
+}
+
+.modo-aula-ativo {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.modo-aula-topo,
+.modo-aula-controles {
+  pointer-events: auto;
+}
+
+.modo-aula-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modo-aula-materia,
+.modo-aula-acoes-topo {
+  display: flex;
+  align-items: center;
+}
+
+.modo-aula-materia {
+  gap: 8px;
+  max-width: 48%;
+  overflow: hidden;
+}
+
+.modo-aula-materia_textos {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.modo-aula-materia strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.modo-aula-materia_textos small {
+  overflow: hidden;
+  color: var(--texto_secundario, #98a4a4);
+  font-size: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.modo-aula-acoes-topo {
+  gap: 8px;
+}
+
+.botao-sair-modo-aula {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.modo-aula-controles .camera_modos {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 28px;
+}
+
+.modo-aula-controles .camera_modos .modo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.scanner-documento {
+  position: absolute;
+  top: 15%;
+  right: 10%;
+  bottom: 35%;
+  left: 10%;
+  overflow: hidden;
+  border: 2px solid var(--amarelo_camera);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.scanner-documento__linha {
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background: var(--amarelo_camera);
+  animation: escanear-documento 2.2s ease-in-out infinite alternate;
+}
+
+@keyframes escanear-documento {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: calc(100% - 2px);
+  }
+}
+
+.botao-gravacao-audio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+  margin-top: 14px;
+  border: 0;
+  background: transparent;
+  color: var(--vermelho-gravacao);
+  font: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.botao-gravacao-audio strong {
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.indicador-gravacao {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--vermelho-gravacao);
+  animation: piscar-gravacao 1s ease-in-out infinite;
+}
+
+@keyframes piscar-gravacao {
+  50% {
+    opacity: 0.25;
+  }
+}
