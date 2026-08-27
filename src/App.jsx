@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-import EscolherPrototipo from "./components/escolherPrototipo/escolherPrototipo";
+import EscolherPrototipo from "./components/escolherprototipo/EscolherPrototipo";
 
 import EntradaModoAula from "./components/camera/1entradamodoaula/EntradaModoAula";
 import ConfigurarCurso from "./components/camera/2configurarcurso/ConfigurarCurso";
