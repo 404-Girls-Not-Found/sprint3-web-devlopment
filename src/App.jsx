@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import EscolherPrototipo from "./components/escolherprototipo/EscolherPrototipo";
+import PrototipoAplicativo from "./components/aplicativo/PrototipoAplicativo";
 
 import EntradaModoAula from "./components/camera/1entradamodoaula/EntradaModoAula";
 import ConfigurarCurso from "./components/camera/2configurarcurso/ConfigurarCurso";
@@ -245,7 +246,9 @@ function App() {
 
   if (telaAtual === "aplicativo") {
     return (
-      <AplicativoPrototipo
+      <PrototipoAplicativo
+        curso={curso}
+        aulas={aulas}
         onVoltar={voltarParaEscolhaPrototipo}
         onAbrirCamera={abrirPrototipoCamera}
       />

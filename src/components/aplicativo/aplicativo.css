@@ -1,0 +1,468 @@
+.aplicativo { 
+    min-height: 100vh; 
+    display: grid; 
+    place-items: center; 
+    color: #f5f8f8; 
+    background: radial-gradient(circle at top, #334646, transparent 45%), #182424; 
+}
+
+
+.aplicativo_tela { 
+    position: relative; 
+    width: min(100%, 510px); 
+    min-height: 100vh; 
+    background: #071010; 
+}
+
+.aplicativo_topo { 
+    position: sticky; 
+    z-index: 10; 
+    top: 0; 
+    min-height: 80px; 
+    padding: 12px 16px; 
+    display: grid; 
+    grid-template-columns: 48px 1fr 48px; 
+    align-items: center; 
+    gap: 14px; 
+    border-bottom: 1px solid #203030; 
+    background: rgba(7, 16, 16, .96); 
+    backdrop-filter: blur(12px); 
+}
+
+.aplicativo_topo--pasta { 
+    grid-template-columns: 48px 1fr; }
+
+.aplicativo_botao_icone { 
+    width: 48px; 
+    height: 48px; 
+    display: grid; 
+    place-items: center; 
+    border: 1px solid #304242; 
+    border-radius: 16px; 
+    background: #101c1c; 
+}
+
+.aplicativo_marca { 
+    min-width: 0; 
+    display: flex; 
+    align-items: center; 
+    gap: 11px; 
+}
+
+.aplicativo_logo { 
+    width: 43px; 
+    height: 43px; 
+    display: grid; 
+    place-items: center; 
+    flex: 0 0 auto; 
+    color: #43dff3; 
+    border-radius: 13px; 
+    background: #062a30; 
+}
+
+.aplicativo_marca div { 
+    min-width: 0; 
+    display: grid; 
+    gap: 3px; 
+}
+
+.aplicativo_marca strong, .aplicativo_marca small { 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+}
+
+.aplicativo_marca strong { 
+    font-size: 17px; 
+}
+
+.aplicativo_marca small { 
+    color: #7f9494; 
+    font-size: 9px; 
+    letter-spacing: 1px; 
+    text-transform: uppercase; 
+}
+
+.aplicativo_conteudo, .pasta_conteudo { 
+    padding: 32px 16px 104px;
+}
+
+.aplicativo_saudacao { 
+    color: #3fe0f5; 
+    font-size: 12px; 
+    font-weight: 700; 
+}
+
+.aplicativo_conteudo > h1, .pasta_conteudo > h1 { 
+    max-width: 430px; 
+    margin: 9px 0 24px; 
+    font-size: clamp(27px, 8vw, 34px); 
+    line-height: 1.08; 
+}
+
+.aplicativo_busca { 
+    height: 48px; 
+    margin-bottom: 22px; 
+    padding: 0 14px; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    color: #5ddced; 
+    border: 1px solid #24515a; 
+    border-radius: 14px; 
+    background: #0b1a1b; 
+}
+
+.aplicativo_busca input { 
+    width: 100%; 
+    color: #fff; 
+    border: 0; 
+    outline: 0; 
+    background: transparent; font: inherit; 
+}
+
+.aplicativo_aviso { 
+    padding: 17px; 
+    display: flex; 
+    gap: 14px; 
+    color: #47ddef; 
+    border: 1px solid #0c6472; 
+    border-radius: 17px; 
+    background: #082124; 
+}
+
+.aplicativo_aviso div { 
+    display: grid; 
+    gap: 7px; 
+}
+
+.aplicativo_aviso strong { 
+    color: #65e5f3; 
+    font-size: 13px; 
+}
+
+.aplicativo_aviso p { 
+    color: #9cc5c8; 
+    font-size: 11px; 
+    line-height: 1.55; 
+}
+
+.proxima_aula { 
+    margin-top: 24px; 
+    padding: 20px; 
+    border: 1px solid #356468; 
+    border-radius: 22px; 
+    background: #0d2020; 
+}
+
+.proxima_aula header { 
+    display: flex; 
+    justify-content: space-between; 
+    color: #b7cbcb; 
+    font-size: 10px; 
+    font-weight: 700; 
+    letter-spacing: 1.5px; }
+.proxima_aula header small { 
+    color: #43dff3; 
+    font-size: 10px; 
+    letter-spacing: 0; 
+}
+
+.proxima_aula_corpo { 
+    margin-top: 18px; 
+    display: grid; 
+    grid-template-columns: 55px 1fr auto; 
+    align-items: center; 
+    gap: 14px;
+}
+
+.proxima_aula_sigla, .materia_sigla { 
+    display: grid; 
+    place-items: center; 
+    flex: 0 0 auto; 
+    font-size: 13px; 
+    font-weight: 700; 
+    border-radius: 17px
+}    
+.proxima_aula_sigla {
+
+    width: 55px; 
+    height: 55px; 
+    color: #52e4f4; 
+    background: #0a3a40;
+}
+
+.proxima_aula_dados { 
+    min-width: 0; 
+    display: grid; 
+    gap: 5px;
+}
+
+.proxima_aula_dados strong { 
+    overflow: hidden; 
+    font-size: 14px; 
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+}
+
+.proxima_aula_dados span { 
+    display: flex; 
+    align-items: center; 
+    gap: 6px; 
+    color: #8da4a4; 
+    font-size: 10px;
+}
+
+.proxima_aula_corpo button, .pasta_vazia button, .materias_vazias button { 
+    padding: 11px 13px; 
+    display: flex; 
+    align-items: center;
+     gap: 7px;
+    color: #fff; 
+    font-size: 11px; 
+    font-weight: 700; 
+    border: 1px solid #13a8bc; 
+    border-radius: 13px; 
+    background: #0a3940;
+}
+
+.aplicativo_totais { 
+    margin: 16px 0 30px; 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); gap: 10px;
+}
+
+.aplicativo_totais article { 
+    min-height: 74px; 
+    padding: 13px; 
+    display: grid; 
+    grid-template-columns: auto 1fr; align-items: center; 
+    column-gap: 10px; 
+    border: 1px solid #273838; 
+    border-radius: 15px; background: #0e1818;
+}
+
+.aplicativo_totais svg { 
+    grid-row: 1 / 3; 
+    color: #3bdcf0; 
+}
+
+.aplicativo_totais strong { 
+    font-size: 16px; 
+}
+
+.aplicativo_totais span { 
+    color: #789292; 
+    font-size: 9px; 
+}
+
+.titulo_secao { 
+    display: flex; 
+    align-items: center; 
+    gap: 9px; 
+}
+
+.titulo_secao svg { 
+    color: #3ddff3; 
+}
+
+.titulo_secao h2 { 
+    font-size: 17px; 
+}
+
+.titulo_secao small { 
+    margin-left: auto;
+
+    color: #718787; 
+    font-size: 9px; 
+}
+
+.materias_lista { 
+    margin-top: 14px; 
+    display: grid; 
+    gap: 11px; 
+}
+
+.materia_cartao { 
+    width: 100%; 
+    padding: 15px; 
+    display: grid; 
+    grid-template-columns: 56px 1fr auto; align-items: center; 
+    gap: 14px; 
+    text-align: left; 
+    border: 1px solid #293a3a; 
+    border-radius: 18px; background: #0e1919; 
+}
+
+.materia_cartao > svg { color: #607373; 
+}
+
+.materia_sigla { width: 56px; height: 56px; 
+}
+
+.materia_sigla--azul { 
+    color: #49e1f1; 
+    background: #09383e; 
+}
+
+.materia_sigla--roxo { 
+    color: #b88cff; background: #28203f; 
+}
+
+.materia_sigla--laranja { 
+    color: #ffc05c; 
+    background: #3b2b17; }
+    
+.materia_sigla--verde { 
+    color: #65dda4; 
+    background: #17392b; 
+}
+.materia_sigla--rosa { 
+    color: #ff8fb6; 
+    background: #40212c; 
+}
+
+.materia_dados { 
+    min-width: 0; 
+    display: grid; 
+    gap: 5px;
+ }
+
+.materia_dados strong, .materia_dados small { 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+}
+
+.materia_dados strong { 
+    font-size: 14px; }.materia_dados small { 
+    color: #799090; 
+    font-size: 9px; 
+}
+
+.materia_dados span { 
+    display: flex; 
+    align-items: center; 
+    gap: 6px; 
+    color: #afc0c0; 
+    font-size: 9px; 
+}
+
+.materia_dados span svg:nth-of-type(2) { 
+    margin-left: 6px; 
+}
+
+.materias_vazias, .pasta_vazia { 
+    padding: 30px 22px; 
+    display: grid; 
+    justify-items: center; 
+    gap: 10px; 
+    color: #829696; 
+    text-align: center; 
+    border: 1px dashed #314545; 
+    border-radius: 18px; 
+}
+
+.materias_vazias strong, .pasta_vazia h2 { 
+    color: #fff; 
+    font-size: 15px; 
+}
+.materias_vazias p, .pasta_vazia p { 
+    max-width: 330px; 
+    font-size: 11px; 
+    line-height: 1.55; 
+}
+
+.busca_sem_resultado { 
+    padding: 24px; 
+    color: #829696; 
+    text-align: center; 
+}
+
+.aplicativo_navegacao { 
+    position: fixed; 
+    z-index: 12; 
+    bottom: 0; 
+    left: 50%; 
+    width: min(100%, 510px); 
+    height: 76px; display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    border-top: 1px solid #243434; 
+    background: rgba(7, 16, 16, .97); 
+    transform: translateX(-50%); 
+    backdrop-filter: blur(12px); 
+}
+
+.aplicativo_navegacao button { 
+    display: grid; 
+    place-content: center; 
+    justify-items: center; 
+    gap: 4px; 
+    color: #657777; 
+    background: transparent; }.aplicativo_navegacao button.ativo { 
+    color: #3ce0f4; 
+}
+
+.aplicativo_navegacao span { 
+    font-size: 9px; 
+}
+
+.pasta_conteudo { 
+    min-height: calc(100vh - 80px); 
+}
+
+.pasta_horarios {
+    margin-bottom: 25px; 
+    padding: 19px; 
+    border: 1px solid #293c3c; 
+    border-radius: 18px; 
+    background: #0e1b1b; 
+}
+
+.pasta_horarios .titulo_secao { 
+    margin-bottom: 14px; 
+}
+
+.pasta_horario { 
+    padding: 13px 0; 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    border-top: 1px solid #233333; 
+}
+
+.pasta_horario > svg { 
+    color: #43dff3; 
+}
+
+.pasta_horario div { 
+    display: grid; 
+    gap: 3px; 
+}
+
+.pasta_horario strong { 
+    font-size: 12px; }.pasta_horario span { 
+    color: #819696; 
+    font-size: 10px; 
+}
+
+@media (max-width: 420px) { .aplicativo_topo { 
+    gap: 9px; }.aplicativo_marca { gap: 8px; 
+}
+.aplicativo_logo { 
+    display: none; }.proxima_aula_corpo { 
+    grid-template-columns: 50px 1fr; 
+}
+.proxima_aula_sigla { 
+    width: 50px; 
+    height: 50px; 
+}
+.proxima_aula_corpo button { 
+    grid-column: 1 / -1; 
+    justify-content: center; 
+}
+.aplicativo_totais article { 
+    padding: 10px; 
+    column-gap: 6px; } 
+}
+
