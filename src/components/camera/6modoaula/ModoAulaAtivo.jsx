@@ -14,7 +14,7 @@ import {
   ZapOff,
 } from "lucide-react";
 
-import "./modoAula.css";
+import "./modoaula.css";
 
 const diasDaSemana = [
   "Domingo",
