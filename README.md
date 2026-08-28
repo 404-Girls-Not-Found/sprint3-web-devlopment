@@ -83,7 +83,7 @@ A Inteligência Artificial foi utilizada como apoio técnico e educacional em do
 
 ## Deploy
 
-Link do deploy na Vercel: **[bia - ADICIONAR O LINK AQUI]**
+Link do deploy na Vercel: https://sprint3-web-devlopment.vercel.app/
 
 ## Repositório
 
